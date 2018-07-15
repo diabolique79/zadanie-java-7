@@ -1,3 +1,5 @@
+package com.example.triangle.model;
+
 public class Triangle {
 
     private double sideA;

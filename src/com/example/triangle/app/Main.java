@@ -1,5 +1,8 @@
+package com.example.triangle.app;
+
 import java.util.Scanner;
 import java.util.Locale;
+import com.example.triangle.model.*;
 
 public class Main {
 
