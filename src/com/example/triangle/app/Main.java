@@ -10,30 +10,56 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
-        System.out.print("Wprowadź długość boku A (przyprostokątna): ");
+        System.out.print("Wprowadź długość boku A: ");
         double sideA = scanner.nextDouble();
-        System.out.print("Wprowadź długość boku B (przyprostokątna): ");
+        System.out.print("Wprowadź długość boku B: ");
         double sideB = scanner.nextDouble();
-        System.out.print("Wprowadź długość boku C (przeciwprostokątna): ");
+        System.out.print("Wprowadź długość boku C: ");
         double sideC = scanner.nextDouble();
         RectangularTriangle rectangularTriangle = new RectangularTriangle();
 
-        Triangle triangle = new Triangle(sideA, sideB, sideC);
+        if (sideC > sideA && sideC > sideB) {
 
-            if (rectangularTriangle.isRightTriangle(triangle)){
+            Triangle triangle = new Triangle(sideA, sideB, sideC);
+
+            if (rectangularTriangle.isRightTriangle(triangle)) {
 
                 System.out.println("Trójkąt jest prostokątny.");
-            }
-
-            else {
+            } else {
 
                 System.out.println("Trójkąt nie jest przyprostokątny.");
 
             }
+        } else if (sideA > sideB && sideA > sideC) {
+
+            Triangle triangle = new Triangle(sideC, sideB, sideA);
+
+            if (rectangularTriangle.isRightTriangle(triangle)) {
+
+                System.out.println("Trójkąt jest prostokątny.");
+            } else {
+
+                System.out.println("Trójkąt nie jest przyprostokątny.");
+
+            }
+        } else {
+
+            Triangle triangle = new Triangle(sideC, sideA, sideB);
+
+            if (rectangularTriangle.isRightTriangle(triangle)) {
+
+                System.out.println("Trójkąt jest prostokątny.");
+            } else {
+
+                System.out.println("Trójkąt nie jest przyprostokątny.");
+
+
+            }
+
+
         }
 
 
-
     }
-
+}
 
