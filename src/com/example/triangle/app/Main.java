@@ -17,47 +17,21 @@ public class Main {
         System.out.print("Wprowadź długość boku C: ");
         double sideC = scanner.nextDouble();
         RectangularTriangle rectangularTriangle = new RectangularTriangle();
+        Triangle triangle = new Triangle(sideA, sideB, sideC);
+        rectangularTriangle.isRightTriangle(triangle);
 
-        if (sideC > sideA && sideC > sideB) {
+        if (rectangularTriangle.isRightTriangle(triangle)) {
 
-            Triangle triangle = new Triangle(sideA, sideB, sideC);
+            System.out.println("Trójkąt jest prostokątny.");
+        }
 
-            if (rectangularTriangle.isRightTriangle(triangle)) {
-
-                System.out.println("Trójkąt jest prostokątny.");
-            } else {
-
-                System.out.println("Trójkąt nie jest przyprostokątny.");
-
-            }
-        } else if (sideA > sideB && sideA > sideC) {
-
-            Triangle triangle = new Triangle(sideC, sideB, sideA);
-
-            if (rectangularTriangle.isRightTriangle(triangle)) {
-
-                System.out.println("Trójkąt jest prostokątny.");
-            } else {
-
-                System.out.println("Trójkąt nie jest przyprostokątny.");
-
-            }
-        } else {
-
-            Triangle triangle = new Triangle(sideC, sideA, sideB);
-
-            if (rectangularTriangle.isRightTriangle(triangle)) {
-
-                System.out.println("Trójkąt jest prostokątny.");
-            } else {
-
-                System.out.println("Trójkąt nie jest przyprostokątny.");
-
-
-            }
-
+        else {
+            System.out.println("Trójkąt nie jest przyprostokątny.");
 
         }
+
+
+
 
 
     }

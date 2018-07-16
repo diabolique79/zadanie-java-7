@@ -7,8 +7,18 @@ public class RectangularTriangle {
 
     public boolean isRightTriangle(Triangle triangle) {
 
-        return isRightTriangle = pow(triangle.getSideA(), 2) + pow(triangle.getSideB(), 2) == pow(triangle.getSideC(), 2);
+        if (triangle.getSideC() > triangle.getSideA() && triangle.getSideC() > triangle.getSideB()) {
+
+            return pow(triangle.getSideA(), 2) + pow(triangle.getSideB(), 2) == pow(triangle.getSideC(), 2);
+        }
+        else if (triangle.getSideB() > triangle.getSideC() && triangle.getSideB() > triangle.getSideA()){
+            return pow(triangle.getSideA(), 2) + pow(triangle.getSideC(), 2) == pow(triangle.getSideB(), 2);
+        }
+
+        else {
+            return pow(triangle.getSideB(), 2) + pow(triangle.getSideC(), 2) == pow(triangle.getSideA(), 2);
+        }
+
+
     }
-
-
 }
